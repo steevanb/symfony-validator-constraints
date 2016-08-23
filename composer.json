@@ -1,0 +1,19 @@
+{
+    "name": "steevanb/symfony-validator-constraints",
+    "license": "MIT",
+    "description": "Add validator constraints",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": { "steevanb\\SymfonyValidatorConstraints\\": "" }
+    },
+    "require": {
+        "php": "^5.4 || ^7.0",
+        "symfony/validator": "^2.3 || ^3.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/steevanb/symfony-validator-constraints.git"
+        }
+    ]
+}
