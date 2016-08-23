@@ -3,7 +3,7 @@
 ![Lines](https://img.shields.io/badge/code lines-306-green.svg)
 ![Total Downloads](https://poser.pugx.org/steevanb/symfony-validator-constraints/downloads)
 [![SensionLabsInsight](https://img.shields.io/badge/SensionLabsInsight-platinum-brightgreen.svg)](https://insight.sensiolabs.com/projects/f021d0ec-7046-4ad3-86ca-f1d85f5156f4/analyses/2)
-[![Scrutinizer](https://scrutinizer-ci.com/g/steevanb/symfony-form-options-builder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/steevanb/symfony-validator-constraints/)
+[![Scrutinizer](https://scrutinizer-ci.com/g/steevanb/symfony-validator-constraints/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/steevanb/symfony-validator-constraints/)
 
 symfony-validator-constraints
 -----------------------------
