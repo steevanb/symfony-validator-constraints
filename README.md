@@ -1,8 +1,8 @@
-[![version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/steevanb/symfony-validator-constraints/tree/1.0.0)
+[![version](https://img.shields.io/badge/version-1.0.1-green.svg)](https://github.com/steevanb/symfony-validator-constraints/tree/1.0.1)
 [![symfony](https://img.shields.io/badge/symfony/validator-^2.3 || ^3.0-blue.svg)](https://symfony.com/)
-![Lines](https://img.shields.io/badge/code lines-306-green.svg)
+![Lines](https://img.shields.io/badge/code lines-314-green.svg)
 ![Total Downloads](https://poser.pugx.org/steevanb/symfony-validator-constraints/downloads)
-[![SensionLabsInsight](https://img.shields.io/badge/SensionLabsInsight-platinum-brightgreen.svg)](https://insight.sensiolabs.com/projects/f021d0ec-7046-4ad3-86ca-f1d85f5156f4/analyses/2)
+[![SensionLabsInsight](https://img.shields.io/badge/SensionLabsInsight-platinum-brightgreen.svg)](https://insight.sensiolabs.com/projects/f021d0ec-7046-4ad3-86ca-f1d85f5156f4/analyses/3)
 [![Scrutinizer](https://scrutinizer-ci.com/g/steevanb/symfony-validator-constraints/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/steevanb/symfony-validator-constraints/)
 
 symfony-validator-constraints
@@ -30,9 +30,9 @@ Foo\Bar:
                 uniqid: bar_baz
                 # properties and getters to generate an "objet identifier",
                 # who has to be unique
-                properties: [ foo, bar ]
-                getters: [ getFoo(), getBar() ]
-                groups: [ add ]
+                properties: [foo, bar]
+                getters: [getFoo(), getBar()]
+                groups: [add]
                 message: translation.message
 ```
 Example :
@@ -43,8 +43,8 @@ Foo\Bar:
         baz:
             - steevanb\SymfonyValidatorConstraints\Constraints\UniqueObject:
                 uniqid: bar_baz
-                properties: [ foo ]
-                groups: [ add ]
+                properties: [foo]
+                groups: [add]
 ```
 ```php
 $object1 = new Foo\Baz();

@@ -8,7 +8,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 class UniqueObjectValidator extends ConstraintValidator
 {
     /** @var array */
-    protected $traversablesValues = [];
+    protected $traversablesValues = array();
 
     /**
      * @param mixed $traversable
@@ -48,7 +48,7 @@ class UniqueObjectValidator extends ConstraintValidator
     {
         foreach ($traversable as $data) {
             $traversableHash = spl_object_hash($data);
-            $this->traversablesValues[$traversableHash] = ['properties' => [], 'getters' => []];
+            $this->traversablesValues[$traversableHash] = array('properties' => array(), 'getters' => array());
 
             foreach ($uniqueObject->getProperties() as $property) {
                 $this->traversablesValues[$traversableHash]['properties'][$property] =
@@ -79,7 +79,7 @@ class UniqueObjectValidator extends ConstraintValidator
      */
     protected function compare($data, UniqueObject $uniqueObject)
     {
-        static $alreadyTested = [];
+        static $alreadyTested = array();
         if (in_array($uniqueObject->getUniqid(), $alreadyTested)) {
             return;
         }
@@ -97,19 +97,21 @@ class UniqueObjectValidator extends ConstraintValidator
                 continue;
             }
 
-            $compare = true;
-            foreach (['properties', 'getters'] as $type) {
+            $isSame = true;
+            foreach (array('properties', 'getters') as $type) {
                 foreach ($dataValues[$type] as $name => $value) {
-                    if (
-                        array_key_exists($name, $dataValues[$type])
-                        && $this->compareValues($dataValues[$type][$name], $value, $uniqueObject->getStrict()) === false
-                    ) {
-                        $compare = false;
+                    if (array_key_exists($name, $values[$type])) {
+                        if ($this->compareValues($values[$type][$name], $value, $uniqueObject->getStrict()) === false) {
+                            $isSame = false;
+                            break 2;
+                        }
+                    } else {
+                        $isSame = false;
                         break 2;
                     }
                 }
             }
-            if ($compare) {
+            if ($isSame) {
                 $this
                     ->context
                     ->buildViolation($uniqueObject->getMessage())
